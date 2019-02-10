@@ -116,3 +116,14 @@ if all(letters in 'ACGT' for letters in DNAString):
 else:
     print("Incorrect,", DNAString, "ce n'est pas un brin ADN.")
     print()
+
+"""Exercice 2 / Page 6"""
+"""Chiffre de Cesar"""
+alphabet = ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+            "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")
+string = "Foudil".lower()
+letter_position = 0
+for letter in string[letter_position]:
+    print(letter_position)
+    print(alphabet.index(letter))
+    print((alphabet.index(letter)+13)
