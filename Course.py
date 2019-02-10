@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.7
+#!/usr/bin/env python3.6
 
 if 'c' in "Victor":
     print('Letter "c" exist in word "Victor"')
@@ -12,6 +12,12 @@ def affiche():
 affiche()
 
 print("Bonjour " * 4)
+
+"""Shows type of variable and its conversion."""
+age = input("SVP entrer votre age : ")
+print(type(age))
+age = int(age)
+print(age + 5)
 
 n = 0
 while n < 5:
