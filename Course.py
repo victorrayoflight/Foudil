@@ -143,3 +143,49 @@ else:
     else:
         print("Q3")
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""TEMPORARY"""
+"""f on datetime import datetime from sys import argv impct os, shutil from itertools import count
+""" quicksave.py : Simple script for quick and dirty backup
+Save all files given on the command line to save_dir. Will add _n to the filename if it already exists in the destination dir so as never to overwrite a file.
+SAVE_DIR = os.path.expanduserf"~/tmp")
+def make_name(dirname, basename, extention, cnt=None):
+	 Build the name for the backup 	
+turn os.path.join(dirname, "" .join((basename,
+" %d" % cnt if cnt else	extention)))
+f in argv[1 :]:
+dir, base = os.path.split(f)
+# We don't use os.path.splitext because it doesn't handle .tar.gz
+parts = base.split(". ")
+name, ext = parts[0], ".".join(parts[1 :])
+for n in count():
+save_name = make_name(SAVE_DIR, name, ext, n) if ot os.path.exists(save_name):
+break
+shutil.copy(f, save_name)""" """
