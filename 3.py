@@ -1,11 +1,11 @@
 #!/usr/bin/env python3.6
 
-L = [6, 12, 10, 6]
+L = [6, 12, 18, 5]
 print("La liste avant permutation : ", L)
 l = len(L)
 aux = L[0]
 L[0] = L[l-1]
-L[l+1] = aux
+L[l-1] = aux
 print("-----------------")
 print("La liste apres permutation :", L)
 

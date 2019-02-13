@@ -199,11 +199,43 @@ def exercice_5():
 exercice_5()
 
 
+"""Exercice 7 / Page 9"""
+"""Vérification de MDP"""
+import uuid
+import hashlib
+import getpass
 
+def hash_password(password):
+    # uuid is used to generate a random number
+    salt = uuid.uuid4().hex
+    hash = hashlib.sha256(salt.encode() + password.encode()).hexdigest() + ':' + salt
 
+    return hash
 
+def check_password(hashed_valid_password, verifying_user_password):
+    hashed_password, salt = hashed_valid_password.split(':')
+    verifying_user_hashed_password = hashlib.sha256(salt.encode() + verifying_user_password.encode()).hexdigest()
 
+    return hashed_password == verifying_user_hashed_password
 
+PASSWORD = 'azerty'
+hash = hash_password(PASSWORD)
+
+def verify_password(password_input):
+    if not check_password(hash, password_input):
+        print('Error: I am sorry but the password does not match. Try again.')
+    else:
+        print('Succès: Mot de passe accepté')
+
+def ask_user_input_v1():
+    return input('Please enter a password: ')
+
+def ask_get_pass_2():
+    print('Welcome ' + getpass.getuser())
+    return getpass.getpass(prompt='Please enter a password: ')
+
+password_input = ask_user_input_v1()
+verify_password(password_input)
 
 
 
