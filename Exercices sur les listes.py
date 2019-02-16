@@ -45,19 +45,13 @@ for element in range (long):
     print("Element", element, ":", list[element])
 
 # compte le nombre de multiples de 3 presents dans la liste
-
-
-def formation_d_une_liste():
-    nb_entiers = int(input("Entrez le nombre d'entiers : "))
-    list = []
-    for number in range(nb_entiers):
-        element = int(input("Entrez un element :"))
-        list.append(element)
-    long = len(list)
-    print("Votre liste", list, "contient", long, "element(s)")
-
-
-formation_d_une_liste()
+nb_entiers = int(input("Entrez le nombre d'entiers : "))
+list = []
+for number in range(nb_entiers):
+    element = int(input("Entrez un element :"))
+    list.append(element)
+long = len(list)
+print("Votre liste", list, "contient", long, "element(s)")
 
 mult3 = int()
 for element in range (long):
@@ -67,3 +61,6 @@ for element in range (long):
 print("Nombre de multiples de 3 :", mult3)
 
 # calcule la somme de toutes les valeurs paires de la liste
+
+
+

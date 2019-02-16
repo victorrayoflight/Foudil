@@ -145,12 +145,87 @@ else:
 
 
 
+"""Exercice / Page 102 2019-02-15
+Affiche si les objets sont des dossiers ou des fichiers
+
+"""
+import os.path
+import sys
+DOSSIER_SOURCE = "/home/vik"
+dirs = os.listdir(DOSSIER_SOURCE)
+for file in dirs:
+    complet = DOSSIER_SOURCE + os.sep + file
+    if os.path.isdir(complet):
+        print("Dossier :", file)
+    if os.path.isfile(complet):
+        print("Fichier :", file)
 
 
 
+"""Exercice sys.ergv / Page 104 2019-02-15"""
+import os, sys
+
+path = '.'
+program_name = sys.argv[0]
+print(program_name)
+
+# option = sys.argv[1]
+# print(option)
+
+if len(sys.argv) == 2:
+    path = sys.argv[1]
+
+files = os.listdir(path)
+for name in files:
+    print(name)
 
 
 
+"""Exercice / Page 150 2019-02-15
+Verifie si un fichier existe
+
+"""
+import sys
+import os
+if os.path.exists("/home/vik"):
+    print("Le fishier/dossier existe")
+else:
+    print("Absent")
+
+
+
+"""Exercice / Page 107 2019-02-15
+hachlib
+
+"""
+import hashlib
+import time
+counter = 1
+
+md5_hash = input("Entrer le hash du MDP :")
+md5_dict = input("Entrer le chemin du dictionnaire :")
+
+try:
+    md5_dict = open(md5_dict, 'r')
+except:
+    print("\n Fichier introuvable")
+    quit()
+
+for password in md5_dict:
+    hash_obj = hashlib.md5(password.strip().encode('utf-8')).hexdigest()
+    start = time.time()
+    print("Trying password %d -----> %s" % (counter, password.strip()))
+    counter += 1
+    end = time.time()
+    t_time = end - start
+
+    if hash_obj == md5_hash:
+        print("Password found! Password is %s" % password)
+        print("Total running time is", t_time, "sec.")
+        time.sleep(10)
+        break
+    else:
+        print("Password not found.")
 
 
 

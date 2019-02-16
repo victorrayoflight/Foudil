@@ -240,5 +240,3 @@ verify_password(password_input)
 
 
 
-
-"""Verification si une lettre est """
