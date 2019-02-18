@@ -60,7 +60,37 @@ for element in range (long):
 
 print("Nombre de multiples de 3 :", mult3)
 
-# calcule la somme de toutes les valeurs paires de la liste
 
+"""Exercice 3 / Page 2
+The same like previous but using functions
 
+"""
+def formation_d_une_liste():
+    nb_entiers = int(input("Entrez le nombre d'entiers : "))
+
+    if (nb_entiers == 0):
+        return []
+
+    number_list = []
+
+    for number in range(nb_entiers):
+        element = int(input("Entrez un element :"))
+        number_list.append(element)
+    long = len(number_list)
+    print("Votre liste", number_list, "contient", long, "element(s)")
+
+    return number_list
+
+def exerсiсe_3_2():
+    number_list = formation_d_une_liste()
+    long = len(number_list)
+
+    mult3 = int()
+    for element in range (long):
+        if number_list[element] % 3 == 0:
+            mult3 += 1
+
+    print("Nombre de multiples de 3 :", mult3)
+
+exerсiсe_3_2()
 
