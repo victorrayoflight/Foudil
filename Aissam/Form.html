@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire</title>
+    <style>
+        legend {
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+        }
+        td.title {
+            font-weight: bold;
+            width: 20%;
+        }
+        .buttons {
+            padding: 10px;
+            // margin: 20px;
+            // border: 1px solid lightgray;
+        }
+        fieldset {
+            padding: 20px;
+            background-color: #fffacd;
+        }
+        body {
+            font-family: sans-serif, Arial;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <fieldset>
+        <legend>Client</legend>
+        <table>
+            <tr>
+                <td class="title">Civilité</td>
+                <td>
+                    <input id="civilite_Mademoiselle" type="radio" name="civilite" value="Mademoiselle">
+                    <label for="civilite_Mademoiselle">Mademoiselle</label>
+
+                    <input id="civilite_Madame" type="radio" name="civilite" value="Madame">
+                    <label for="civilite_Madame">Madame</label>
+
+                    <input id="civilite_Monsieur" type="radio" name="civilite" value="Monsieur">
+                    <label for="civilite_Monsieur">Monsieur</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    <label for="nom_prenom_text">Nom / Prénom</label>
+                </td>
+                <td>
+                    <input id="nom_prenom_text" type="text" name="nom_prenom" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    <label for="adresse_textarea">Adresse</label>
+                </td>
+                <td>
+                    <textarea id="adresse_textarea" rows="2" name="adresse"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    <label for="no_postal_text">No postal</label> /
+                    <label for="localite_text">Localité</label>
+                </td>
+                <td>
+                    <input id="no_postal_text" type="text" maxlength="4" name="no_postal" value="">
+                    <input id="localite_text" type="text" name="localite" value="Longueuil">
+                </td>
+            </tr>
+            <tr>
+                <td class="title">
+                    <label for="pays_select">Pays</label>
+                </td>
+                <td>
+                    <select id="pays_select" name="pays">
+                        <option value="canada">Canada</option>
+                        <option value="suisse" selected>Suisse</option>
+                    </select>
+                    </td>
+            </tr>
+            <tr>
+                <td class="title">Platforme(s)</td>
+                <td>
+                    <input id="platforme_Windows" type="checkbox" name="platforme" value="Windows">
+                    <label for="platforme_Windows">Windows</label>
+
+                    <input id="platforme_Macintosh" type="checkbox" name="platforme" value="Macintosh">
+                    <label for="platforme_Macintosh">Macintosh</label>
+
+                    <input id="platforme_Unix" type="checkbox" name="platforme" value="Unix">
+                    <label for="platforme_Unix">Unix</label>
+                </td>
+            <tr>
+                <td class="title">
+                    <label for="application_select">Application(s)</label>
+                </td>
+                <td>
+                    <select id="application_select" name="application" size="5" multiple>
+                        <option value="bureautiques">Bureautiques</option>
+                        <option value="dao">DAO</option>
+                        <option value="statistiques">Statistiques</option>
+                        <option value="sgbd">SGBD</option>
+                        <option value="internet">Internet</option>
+                    </select>
+                    </td>
+            </tr>
+        </table>
+    </fieldset>
+    <div class="row buttons">
+        <input type="submit" value="Soumettre formulaire">
+        <input type="reset" value="Effacer">
+    </div>
+</form>
+</body>
+</html>
