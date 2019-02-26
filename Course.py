@@ -194,7 +194,13 @@ else:
 
 
 
-"""Exercice preparatoire au prochain
+"""Les dicts sont dans le meme dossier :
+wordlist_1-4_0123456789.txt (1-4 characters, juste les chiffres 0-9) ;
+wordlist_6_xyz123.txt (6 characters, lettre x, y, z et chiffres 1-3)
+
+"""
+
+"""Exercice / Page 107 2019-02-15
 Creation du hach d'un MDP
 
 """
@@ -242,39 +248,51 @@ for password in md5_dict:
         print("Password not found.")
 
 
+"""Exercice / Page 109
+Menu
 
+"""
+import subprocess
+import sys, os
+os.system('clear')
 
+print("Choisissez un nombre de 1 a 4 (ou 0 (zero) pour terminer :")
+print("**********************************************************")
+print("1. Installer le service HTTPD")
+print("2. Demarrer le service HTTPD")
+print("3. Verifier son status et le port d'ecoute")
+print("4. Tester une connection avec HTTPD")
+print("0. Pour quitter")
 
+choix = int(input("Veuillez entrer votre choix S.V.P. :"))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""TEMPORARY"""
-"""f on datetime import datetime from sys import argv impct os, shutil from itertools import count
-""" quicksave.py : Simple script for quick and dirty backup
-Save all files given on the command line to save_dir. Will add _n to the filename if it already exists in the destination dir so as never to overwrite a file.
-SAVE_DIR = os.path.expanduserf"~/tmp")
-def make_name(dirname, basename, extention, cnt=None):
-	 Build the name for the backup 	
-turn os.path.join(dirname, "" .join((basename,
-" %d" % cnt if cnt else	extention)))
-f in argv[1 :]:
-dir, base = os.path.split(f)
-# We don't use os.path.splitext because it doesn't handle .tar.gz
-parts = base.split(". ")
-name, ext = parts[0], ".".join(parts[1 :])
-for n in count():
-save_name = make_name(SAVE_DIR, name, ext, n) if ot os.path.exists(save_name):
-break
-shutil.copy(f, save_name)""" """
+while a != 0:
+    if choix == 1:
+        print("Vous avez choisi d'installer HTTPD :")
+        os.system('yum install httpd -y')
+        os.system('python menuaffichage.py')
+    elif choix == 2:
+        print("Vous avez choisi de demarrer HTTPD: ")
+        os.system('systemctl stop httpd')
+        os.system('systemctl start httpd')
+        input("Appuyez sur une touche pour continuer...")
+        os.system('python menuaffichage.py')
+    elif choix == 3:
+        print("Vous avez choisi de verifier le status et le port d'ecoute :")
+        input("Verifions son status... Appuyez sur une touche...")
+        os.system('systemctl status httpd')
+        print("Verifions port d'ecoute...")
+        os.system('netstat - na | grep :80')
+        input("Appuyez sur une touche pour continuer...")
+        os.system('python menuaffichage.py')
+    elif choix == 4:
+        print("Vous allez tester la connection avec HTTPD :")
+        os.system('wget http://www.bdeb.qc.ca')
+        input("Appuyez sur une touche pour continuer...")
+        os.system('python menuaffichage.py')
+    else:
+        print("Vous avez choisi 0 pour quitter :")
+        input("Appuyez sur une touche pour continuer...")
+    exit()
+print("Vous avez entre zero :")
+print("L'exercice est termine.")
