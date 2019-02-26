@@ -194,7 +194,13 @@ else:
 
 
 
-"""Exercice preparatoire au prochain
+"""Les dicts sont dans le meme dossier :
+wordlist_1-4_0123456789.txt (1-4 characters, juste les chiffres 0-9) ;
+wordlist_6_xyz123.txt (6 characters, lettre x, y, z et chiffres 1-3)
+
+"""
+
+"""Exercice / Page 107 2019-02-15
 Creation du hach d'un MDP
 
 """
