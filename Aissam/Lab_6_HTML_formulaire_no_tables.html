@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire</title>
+  <style>
+    /* https://www.w3schools.com/Css/css_float.asp */
+    * {
+      box-sizing: border-box;
+    }
+    html, body, input, textarea {
+      font-family: sans-serif, Arial;
+      font-size: 13px;
+    }
+    fieldset {
+      padding: 20px;
+      background-color: #fffacd;
+    }
+    legend {
+      font-weight: bold;
+    }
+    .signature {
+      color: #f08080;
+      line-height: 5;
+      text-align: right;
+    }
+    .form {
+      width: 100%;
+    }
+    .row {
+      width: 100%;
+    }
+    .row:after {
+      display: block;
+      content: '';
+      clear: both;
+      overflow: auto;
+    }
+    .cell {
+      float: left;
+      padding: 5px;
+    }
+    .title {
+      font-weight: bold;
+      width: 25%;
+    }
+    .input {
+      width: 75%;
+    }
+    .buttons {
+      padding: 10px;
+    }
+  </style>
+
+<!-- Start: injected by Adguard -->
+<script src="//local.adguard.com/adguard-ajax-api/injections/content-script.js?ts=63686785821597&amp;domain=mail-attachment.googleusercontent.com&amp;mask=103" nonce="f54e6a089469414690047104648072ed" type="text/javascript"></script>
+<script src="//local.adguard.com/adguard-ajax-api/injections/userscripts.js?ts=63686524762514&name=AdGuard%20Popup%20Blocker&name=Adguard%20Assistant" nonce="f54e6a089469414690047104648072ed" type="text/javascript"></script>
+
+<!-- End: injected by Adguard -->
+</head>
+<body>
+<form action="">
+  <fieldset>
+    <legend>Client</legend>
+    <div class="form">
+      <div class="row">
+        <div class="cell title">Civilité</div>
+        <div class="cell input">
+          <input id="civilite_Mademoiselle" type="radio" name="civilite" value="Mademoiselle">
+          <label for="civilite_Mademoiselle">Mademoiselle</label>
+
+          <input id="civilite_Madame" type="radio" name="civilite" value="Madame">
+          <label for="civilite_Madame">Madame</label>
+
+          <input id="civilite_Monsieur" type="radio" name="civilite" value="Monsieur">
+          <label for="civilite_Monsieur">Monsieur</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell title">
+          <label for="nom_prenom_text">Nom / Prénom</label>
+        </div>
+        <div class="cell input">
+          <input id="nom_prenom_text" type="text" name="nom_prenom" value="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell title">
+          <label for="adresse_textarea">Adresse</label>
+        </div>
+        <div class="cell input">
+          <textarea id="adresse_textarea" rows="2" name="adresse"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell title">
+          <label for="no_postal_text">No postal</label> /
+          <label for="localite_text">Localité</label>
+        </div>
+        <div class="cell input">
+          <input id="no_postal_text" type="text" maxlength="4" name="no_postal" value="">
+          <input id="localite_text" type="text" name="localite" value="Longueuil">
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell title">
+          <label for="pays_select">Pays</label>
+        </div>
+        <div class="cell input">
+          <select id="pays_select" name="pays">
+            <option value="canada">Canada</option>
+            <option value="suisse" selected>Suisse</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell title">Platforme(s)</div>
+        <div class="cell input">
+          <input id="platforme_Windows" type="checkbox" name="platforme" value="Windows">
+          <label for="platforme_Windows">Windows</label>
+
+          <input id="platforme_Macintosh" type="checkbox" name="platforme" value="Macintosh">
+          <label for="platforme_Macintosh">Macintosh</label>
+
+          <input id="platforme_Unix" type="checkbox" name="platforme" value="Unix">
+          <label for="platforme_Unix">Unix</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell title">
+          <label for="application_select">Application(s)</label>
+        </div>
+        <div class="cell input">
+          <select id="application_select" name="application" size="5" multiple>
+            <option value="bureautiques">Bureautiques</option>
+            <option value="dao">DAO</option>
+            <option value="statistiques">Statistiques</option>
+            <option value="sgbd">SGBD</option>
+            <option value="internet">Internet</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <div class="row buttons">
+    <input type="submit" value="Soumettre formulaire">
+    <input type="reset" value="Effacer">
+  </div>
+</form>
+<p class="signature">Lab 6 / Victor Medvedev / 2019-02-19</p>
+</body>
+</html>
