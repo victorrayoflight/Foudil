@@ -1,5 +1,11 @@
+#!/usr/bin/env python3
+
 """Exercice / Page 107 2019-02-15
 Creation du hach d'un MDP
+
+Cree par Victor Medvedev
+Documentation : Digest access authentication
+https://en.wikipedia.org/wiki/Digest_access_authentication
 
 """
 
