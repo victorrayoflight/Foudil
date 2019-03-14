@@ -15,7 +15,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 time_start = datetime.now()
 
-for port_number in range (1, 101): # max 65535
+for port_number in range (101, 1001): # max 65535
     result = sock.connect_ex((remote_server, port_number))
     if result == 0:
         print("Port", port_number, ": Open")
