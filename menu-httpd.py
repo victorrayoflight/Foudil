@@ -128,7 +128,18 @@ def choix():
     print("8. Desinstaller le service HTTPD")
     print("0. Quitter")
 
-    choix = int(input("Veuillez entrer votre choix S.V.P. : "))
+    while (True):
+        try:
+            choix = int(input("Veuillez entrer votre choix S.V.P. : "))
+            # Break si le choix d'operateur est un chiffre
+            break
+        except ValueError:
+            # Affiche une erreur et continue la boucle 'while'
+            print("")
+            print("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/")
+            print("Vous avez entré un caractère qui n'est pas un chiffre")
+            print("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/")
+            print("")
 
     return choix
 
@@ -156,9 +167,9 @@ while user_choix != 0:
         options[user_choix]()
 
     else:
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print("Wrong choix. Essayez encore une fois.")
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/")
+        print("Choix erroné, essayez encore une fois")
+        print("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/")
         print("")
 
     user_choix = choix()
