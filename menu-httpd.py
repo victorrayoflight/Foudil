@@ -7,9 +7,13 @@ Cree par Victor Medvedev
 
 """
 
+    # Import des modules"
+
 import subprocess
 import sys, os
 
+
+    # Fonctions
 
 def quitter():
     print("Vous avez choisi 0 pour quitter...")
@@ -28,6 +32,22 @@ def installer():
         if (restart == 'Y'):
             redemarrer()
     input("Appuyez sur Enter pour continuer...")
+    os.system('clear')
+
+
+def configurer():
+    print("*************************************************")
+    print("Vous avez choisi de configurer HTTPD (httpd.conf)")
+    print("*************************************************")
+    print("Voulez vous faire un backup de fichier de configuration 'httpd.conf' ?")
+    backup=input("'Y' pour 'Oui' ou n'importe quelle touche pour 'Non' : ")
+    if backup.upper() in 'Y':
+        os.system('sudo cp -i /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.bak')
+        print("**************************************")
+        print("Le fichier 'httpd.conf.bak' était créé")
+        print("**************************************")
+        input("Appuyez sur Enter pour continuer...")
+    os.system('sudo nano /etc/httpd/conf/httpd.conf')
     os.system('clear')
 
 
@@ -96,15 +116,16 @@ def desinstaller():
 
 def choix():
     print("*********************************************************")
-    print("Choisissez un nombre de 1 a 7 (ou 0 (zero) pour terminer)")
+    print("Choisissez un nombre de 1 à 8 (ou 0 (zero) pour terminer)")
     print("*********************************************************")
     print("1. Installer le service HTTPD")
-    print("2. Demarrer le service HTTPD")
-    print("3. Verifier le status du service")
-    print("4. Verifier le status du port d'ecoute")
-    print("5. Tester la connection avec HTTPD")
-    print("6. Arreter le service HTTPD")
-    print("7. Desinstaller le service HTTPD")
+    print("2. Modifier fichier de configuration 'httpd.conf' (avec un backup)")
+    print("3. Demarrer le service HTTPD")
+    print("4. Verifier le status du service")
+    print("5. Verifier le status du port d'ecoute")
+    print("6. Tester la connection avec HTTPD")
+    print("7. Arreter le service HTTPD")
+    print("8. Desinstaller le service HTTPD")
     print("0. Quitter")
 
     choix = int(input("Veuillez entrer votre choix S.V.P. : "))
@@ -112,15 +133,18 @@ def choix():
     return choix
 
 
+    # Dictionnaire ou le script va chercher la fonction à executer après qu'user rentre son choix (0-8)
+
 options = {
     0: quitter,
     1: installer,
-    2: demarrer,
-    3: status_service,
-    4: status_port,
-    5: tester_connection,
-    6: arreter,
-    7: desinstaller
+    2: configurer,
+    3: demarrer,
+    4: status_service,
+    5: status_port,
+    6: tester_connection,
+    7: arreter,
+    8: desinstaller
 }
 
 os.system('clear')
