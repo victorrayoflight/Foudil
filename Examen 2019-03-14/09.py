@@ -5,14 +5,4 @@ def nPrint(message, n):
         print(message)
         n-=1
 
-nPrint('a', )
-
-
-
-
-# doljno vyvesti:
-
-a
-a
-a
-a
+nPrint('a', 4)

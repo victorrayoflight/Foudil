@@ -3,8 +3,10 @@
 t1 = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 t2 = ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre']
 
-sovmestit eti 2 lists
+t12 = []
 
-doljno vyvesti
+for i in range(len(t1)):
+  t12.append(t2[i])
+  t12.append(t1[i])
 
-'Janvier', '31', 'Fevrier', '28' etc
+print(t12)
